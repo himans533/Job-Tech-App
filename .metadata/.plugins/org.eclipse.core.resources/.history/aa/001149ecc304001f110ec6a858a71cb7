@@ -1,0 +1,17 @@
+package com.JobTech.Service;
+
+import java.util.List;
+
+import com.JobTech.Dto.Company;
+import com.JobTech.Dto.Review;
+
+public interface ReviewService {
+
+	List<Review> getAllReviews (Long companyId);
+
+	List<Review> findAll();
+
+	void createReview(Review review);
+
+	
+}

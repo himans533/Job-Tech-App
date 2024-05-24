@@ -1,0 +1,52 @@
+package com.JobTech.Dto;
+
+import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+@Entity
+public class Company {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	private String title;
+	private String Decription;
+	
+	@OneToMany
+	private List<Job> jobs;
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long nextId) {
+		this.id = nextId;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getDecription() {
+		return Decription;
+	}
+	public void setDecription(String decription) {
+		Decription = decription;
+	}
+	public Company(Long id, String title, String decription) {
+		this.id = id;
+		this.title = title;
+		Decription = decription;
+	}
+	public Company() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+}

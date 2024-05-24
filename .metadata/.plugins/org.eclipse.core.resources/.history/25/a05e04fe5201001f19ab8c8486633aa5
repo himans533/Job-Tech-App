@@ -1,0 +1,63 @@
+package com.JobTech.Dto;
+
+public class Job {
+
+	private Long id;
+	private String title;
+	private String decription;
+	private String minsalary;
+	private String maxsalary;
+	private String location;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long nextId) {
+		this.id = nextId;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getDecription() {
+		return decription;
+	}
+	public void setDecription(String decription) {
+		this.decription = decription;
+	}
+	public String getMinsalary() {
+		return minsalary;
+	}
+	public void setMinsalary(String minsalary) {
+		this.minsalary = minsalary;
+	}
+	public String getMaxsalary() {
+		return maxsalary;
+	}
+	public void setMaxsalary(String maxsalary) {
+		this.maxsalary = maxsalary;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	public Job(Long id, String title, String decription, String minsalary, String maxsalary, String location) {
+		this.id = id;
+		this.title = title;
+		this.decription = decription;
+		this.minsalary = minsalary;
+		this.maxsalary = maxsalary;
+		this.location = location;
+	}
+	@Override
+	public String toString() {
+		return "Job [id=" + id + ", title=" + title + ", decription=" + decription + ", minsalary=" + minsalary
+				+ ", maxsalary=" + maxsalary + ", location=" + location + "]";
+	}
+	
+	
+	
+}

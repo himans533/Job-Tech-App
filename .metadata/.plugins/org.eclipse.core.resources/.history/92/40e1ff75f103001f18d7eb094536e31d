@@ -1,0 +1,10 @@
+package com.JobTech.Service;
+
+import java.util.List;
+
+import com.JobTech.Dto.Company;
+
+public interface CompanyService {
+
+	List <Company> findAll();
+}

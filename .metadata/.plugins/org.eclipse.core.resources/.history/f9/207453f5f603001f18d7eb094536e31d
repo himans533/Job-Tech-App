@@ -1,0 +1,41 @@
+package com.JobTech.Dto;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Company {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	private String title;
+	private String Decription;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long nextId) {
+		this.id = nextId;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getDecription() {
+		return Decription;
+	}
+	public void setDecription(String decription) {
+		Decription = decription;
+	}
+	public Company(Long id, String title, String decription) {
+		super();
+		this.id = id;
+		this.title = title;
+		Decription = decription;
+	}
+	
+}

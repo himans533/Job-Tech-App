@@ -1,0 +1,18 @@
+package com.JobTech.Service.copy;
+
+import java.util.List;
+
+import com.JobTech.Dto.Job;
+
+
+public interface JobService {
+
+	List<Job> findAll();
+	void createJob(Job job);
+	
+	Job getJobById(Long id);
+	
+	boolean deleteJobById(Long id);
+	
+	boolean updateJob(Long id, Job updateJob);
+}

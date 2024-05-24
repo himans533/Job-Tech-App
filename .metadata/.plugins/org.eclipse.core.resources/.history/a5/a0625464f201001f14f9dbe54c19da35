@@ -1,0 +1,61 @@
+package com.JobTech.Impl;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
+import com.JobTech.Dto.Job;
+import com.JobTech.Service.JobService;
+
+@Service
+public class JobServiceImpl implements JobService{
+//	private List<Job> jobs =new ArrayList<>();
+	
+	JpaRepository  jpaRepository;
+	
+	private Long nextId = 1L;
+	
+	public JobServiceImpl(JpaRepository jpaRepository) {
+	this.jpaRepository = jpaRepository;
+     }
+
+
+	@Override
+	public List<Job> findAll() {		
+		return jpaRepository.findAll();
+	}
+
+	@Override
+	public void createJob(Job job) {
+		job.setId(nextId++);
+		jpaRepository.save(job);	
+	}
+
+	@Override
+	public Job getJobById(Long id) {
+        return jpaRepository.findById(id).orElse(null);
+	}
+	
+	@Override
+	public boolean deleteJobById(Long id) {
+		return jpaRepository
+	}
+
+	@Override
+	public boolean updateJob(Long id, Job updateJob) {
+		for(Job job : jobs) {
+			if(job.getId().equals(id)) {
+				job.setTitle(updateJob.getTitle());
+				job.setDecription(updateJob.getDecription());
+				job.setMaxsalary(updateJob.getMaxsalary());
+				job.setMinsalary(updateJob.getMinsalary());
+				job.setLocation(updateJob.getLocation());
+				return true;
+			}
+		}
+		return false;
+	}
+	
+}

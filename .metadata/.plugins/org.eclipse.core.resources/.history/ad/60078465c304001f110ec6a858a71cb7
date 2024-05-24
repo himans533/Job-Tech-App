@@ -1,0 +1,33 @@
+package com.JobTech.Impl;
+
+import java.util.List;
+
+import com.JobTech.Dto.Company;
+import com.JobTech.Dto.Review;
+import com.JobTech.Repository.ReviewRepository;
+import com.JobTech.Service.ReviewService;
+
+public class ReviewServiceImpl implements ReviewService{
+	
+	private ReviewRepository reviewRepository;
+
+	@Override
+	public List<Review> getAllReviews(Long companyId) {
+		List<Review> reviews = reviewRepository.findByCompanyId(companyId);
+		return reviews;
+	}
+
+	@Override
+	public List<Review> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void createReview(Review review) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

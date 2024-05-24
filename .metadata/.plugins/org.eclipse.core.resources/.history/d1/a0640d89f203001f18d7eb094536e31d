@@ -1,0 +1,21 @@
+package com.JobTech.Controller;
+
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.JobTech.Dto.Company;
+import com.JobTech.Dto.Job;
+import com.JobTech.Service.CompanyService;
+
+public class CompanyController {
+
+	private CompanyService companyService;
+	
+	@GetMapping("/company")
+	 public ResponseEntity<List<Company>> findAll(){
+		return ResponseEntity.ok(companyService.findAll());
+		   
+	   }
+}

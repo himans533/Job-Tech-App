@@ -1,0 +1,36 @@
+package com.JobTech.Controller;
+
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.JobTech.Dto.Company;
+import com.JobTech.Dto.Review;
+import com.JobTech.Service.ReviewService;
+
+@RestController
+public class ReviewController {
+ 
+	private ReviewService reviewService;
+
+	public ReviewController(ReviewService reviewService) {
+		this.reviewService = reviewService;
+	}
+	
+	@GetMapping("/review")
+	 public ResponseEntity<List<Review>> findAll(){
+			return ResponseEntity.ok(reviewService.findAll());
+			   
+	   }
+	
+	public ResponseEntity<String> createReview(@RequestBody Review review){
+		 reviewService.createReview(review);
+		return new ResponseEntity<String>("Add Review Successfully " , HttpStatus.OK);
+		
+	}
+	
+}

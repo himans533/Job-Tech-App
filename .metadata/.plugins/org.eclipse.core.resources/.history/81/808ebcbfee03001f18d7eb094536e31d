@@ -1,0 +1,5 @@
+package com.JobTech.Dto;
+
+public class Job {
+
+}

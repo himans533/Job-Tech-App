@@ -1,0 +1,36 @@
+package com.JobTech.Impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.JobTech.Dto.Company;
+import com.JobTech.Repository.CompanyRepository;
+import com.JobTech.Service.CompanyService;
+
+@Service
+public class CompanyServiceImpl implements CompanyService{
+
+   CompanyRepository  companyRepository;
+	
+	private Long nextId = 1L;
+	
+	
+
+	public CompanyServiceImpl(CompanyRepository companyRepository) {
+		super();
+		this.companyRepository = companyRepository;
+	}
+
+	@Override
+	public List<Company> findAll() {		
+		return companyRepository.findAll();
+	}
+
+	@Override
+	public void createCompany(Company company) {
+		company.setId(nextId++);
+		companyRepository.save(company);	
+	}
+
+}
